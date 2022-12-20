@@ -8,9 +8,11 @@
 
 ## Menjalankan Program
 
+## .env.example => .env => set
+
 ### php artisan key:generate
 
-### npm install
+### npm install ()
 
 ### composer install
 
