@@ -4,7 +4,10 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\CertainFactor;
 use App\Models\Gejala;
+use App\Models\Keputusan;
+use App\Models\KondisiUser;
 use App\Models\TingkatDepresi;
 use Illuminate\Database\Seeder;
 
@@ -161,8 +164,81 @@ class DatabaseSeeder extends Seeder
             ),
         ];
 
+        $keputusan = [
+            'kode_keputusan' => 'K001',
+            'kode_gejala' => 'G028',
+            'kode_depresi' => 'P003',
+            'mb' => 0.3,
+            'md' => 0.4
+        ];
 
+        $cf = [
+            [
+                'kondisi' => 'Pasti Tidak',
+                'cf' => -1.0,
+            ],
+            [
+                'kondisi' => 'Hampir Pasti Tidak',
+                'cf' => -0.8,
+            ],
+            [
+                'kondisi' => 'Kemungkinan Besar Tidak',
+                'cf' => -0.6,
+            ],
+            [
+                'kondisi' => 'Mungkin Tidak',
+                'cf' => -0.4,
+            ],
+            [
+                'kondisi' => 'Tidak Tahu',
+                'cf' => -0.2,
+            ],
+            [
+                'kondisi' => 'Tidak Yakin',
+                'cf' => 0.2,
+            ],
+            [
+                'kondisi' => 'Mungkin',
+                'cf' => 0.4,
+            ],
+            [
+                'kondisi' => 'Kemungkinan Besar',
+                'cf' => 0.6,
+            ],
+            [
+                'kondisi' => 'Hampir Pasti',
+                'cf' => 0.8,
+            ],
+            [
+                'kondisi' => 'Pasti',
+                'cf' => 1,
+            ],
+        ];
+
+        $cf_user = [
+            [
+                "kondisi" => "Tidak",
+                'nilai' => 0.0
+            ],
+            [
+                "kondisi" => "Mungkin",
+                'nilai' => 0.4
+            ],
+            [
+                "kondisi" => "Kemungkinan Besar",
+                'nilai' => 0.6
+            ],
+            [
+                "kondisi" => "Hampir Pasti",
+                'nilai' => 0.8
+            ],
+        ];
+
+
+        Keputusan::create($keputusan);
         Gejala::insert($gejala);
         TingkatDepresi::insert($depresi);
+        CertainFactor::insert($cf);
+        KondisiUser::insert($cf_user);
     }
 }
