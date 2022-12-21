@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Gejala;
-use App\Models\KondisiUser;
-use Illuminate\Http\Request;
+use App\Models\Diagnosa;
+use App\Http\Requests\StoreDiagnosaRequest;
+use App\Http\Requests\UpdateDiagnosaRequest;
 
-class FormDiagnosa extends Controller
+class DiagnosaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,21 +36,21 @@ class FormDiagnosa extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreDiagnosaRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreDiagnosaRequest $request)
     {
-        dd($request->all());
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Diagnosa  $diagnosa
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Diagnosa $diagnosa)
     {
         //
     }
@@ -58,10 +58,10 @@ class FormDiagnosa extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\Diagnosa  $diagnosa
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Diagnosa $diagnosa)
     {
         //
     }
@@ -69,11 +69,11 @@ class FormDiagnosa extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Http\Requests\UpdateDiagnosaRequest  $request
+     * @param  \App\Models\Diagnosa  $diagnosa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateDiagnosaRequest $request, Diagnosa $diagnosa)
     {
         //
     }
@@ -81,10 +81,10 @@ class FormDiagnosa extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\Diagnosa  $diagnosa
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Diagnosa $diagnosa)
     {
         //
     }

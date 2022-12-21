@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\FormDiagnosa;
+use App\Http\Controllers\DiagnosaController;
+use App\Http\Controllers\GejalaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/spk', FormDiagnosa::class);
+Route::resource('/spk', DiagnosaController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::resource('/gejala', GejalaController::class);

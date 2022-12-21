@@ -15,7 +15,8 @@ class GejalaController extends Controller
      */
     public function index()
     {
-        //
+        $gejala = Gejala::paginate(15);
+        return view('admin.Gejala.gejala', compact('gejala'));
     }
 
     /**
@@ -36,7 +37,15 @@ class GejalaController extends Controller
      */
     public function store(StoreGejalaRequest $request)
     {
-        //
+        // dd($request->all());
+        $valid = $request->validate([
+            "kode_gejala" => 'required|unique:gejala,kode_gejala',
+            'gejala' => 'required|unique:gejala,gejala'
+        ]);
+        Gejala::create($valid);
+        return redirect()->route('gejala.index')->with('pesan', '<div class="alert alert-success p-3 mt-3" role="alert">
+        Gejala telah ditambahkan
+        </div>');
     }
 
     /**
@@ -70,7 +79,13 @@ class GejalaController extends Controller
      */
     public function update(UpdateGejalaRequest $request, Gejala $gejala)
     {
-        //
+        $valid = $request->validate([
+            "gejala" => "required"
+        ]);
+        $gejala->update($valid);
+        return redirect()->route('gejala.index')->with('pesan', '<div class="alert alert-info p-3 mt-3" role="alert">
+        Gejala telah diperbarui
+        </div>');
     }
 
     /**
@@ -81,6 +96,10 @@ class GejalaController extends Controller
      */
     public function destroy(Gejala $gejala)
     {
-        //
+        // dd($gejala);
+        $gejala->delete();
+        return redirect()->route('gejala.index')->with('pesan', '<div class="alert alert-danger p-3 mt-3" role="alert">
+        Gejala telah dihapus
+        </div>');
     }
 }
