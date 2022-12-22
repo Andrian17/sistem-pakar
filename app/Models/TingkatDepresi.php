@@ -10,4 +10,5 @@ class TingkatDepresi extends Model
     use HasFactory;
     protected $table = 'tingkat_depresi';
     protected $guard = ["id"];
+    protected $fillable = ['kode_depresi', 'depresi'];
 }

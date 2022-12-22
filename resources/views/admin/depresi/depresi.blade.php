@@ -20,32 +20,33 @@
                 </div>
             @endif
             <div class="mt-2 pt-3 d-flex ms-auto">
-                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#storeModal">
-                    <i class="bi bi-plus-circle-fill"> Tambah Gejala</i>
+                <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#depresiModal">
+                    <i class="bi bi-plus-circle-fill"> Tambah Depresi</i>
                 </button>
             </div>
             <table id="tabel-gejala" class="table table-bordered table-hover my-2">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Kode Gejala</th>
-                    <th scope="col">Gejala</th>
+                    <th scope="col">Kode Depresi</th>
+                    <th scope="col">Depresi</th>
                     <th scope="col">Aksi</th>
                   </tr>
                 </thead>
                 <tbody>
-                    @foreach ($gejala as $item)
+                    @foreach ($depresi as $item)
                         <tr>
-                            <th scope="row">{{ $loop->iteration + $gejala->firstItem() -1 }}</th>
-                            <td>{{$item->kode_gejala}}</td>
-                            <td>{{$item->gejala}}</td>
+                            <th scope="row">{{ $loop->iteration }}</th>
+                            <td>{{$item->kode_depresi}}</td>
+                            <td>{{$item->depresi}}</td>
                             <td>
-                                <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="updateInput('{{ $item->id }}', '{{$item->kode_gejala}}', '{{$item->gejala}}'), actionUbahGejala('/gejala/{{$item->id}}')">
+                                <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="updateInput('{{ $item->id }}',
+                                '{{$item->kode_depresi}}', '{{$item->depresi}}'), actionUbahdepresi('{{ route('depresi.update', $item->id) }}')">
                                     <i class="bi bi-pencil-square"></i>
                                 </button>
-                                <form action="/gejala/{{ $item->id }}" method="post" class="d-inline">
-                                    @method('delete')
-                                    @csrf
+                                <form action="{{ route('depresi.destroy', $item) }}" class="d-inline" method="POST">
+                                    @method('DELETE')
+                                    @csrf()
                                     <button type="submit" class="btn btn-outline-danger">
                                         <i class="bi bi-trash3-fill"></i>
                                     </button>
@@ -55,10 +56,8 @@
                     @endforeach
                 </tbody>
               </table>
-              <div class="d-flex justify-content-center">
-                  {{ $gejala->links('pagination::simple-bootstrap-5') }}
-              </div>
-              @include('components.admin_modal_gejala_edit')
+
+              @include('components.admin_modal_depresi_edit')
           </div>
         </div>
     </div>

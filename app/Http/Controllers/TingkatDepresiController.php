@@ -15,7 +15,9 @@ class TingkatDepresiController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.depresi.depresi', [
+            'depresi' => TingkatDepresi::all()
+        ]);
     }
 
     /**
@@ -36,7 +38,14 @@ class TingkatDepresiController extends Controller
      */
     public function store(StoreTingkatDepresiRequest $request)
     {
-        //
+        $valid = $request->validate([
+            'kode_depresi' => 'required|unique:tingkat_depresi,kode_depresi',
+            'depresi' => 'required'
+        ]);
+        TingkatDepresi::create($valid);
+        return redirect()->route('depresi.index')->with('pesan', '<div class="alert alert-success p-3 mt-3" role="alert">
+        Daftar Depresi telah ditambahkan
+        </div>');
     }
 
     /**
@@ -68,9 +77,16 @@ class TingkatDepresiController extends Controller
      * @param  \App\Models\TingkatDepresi  $tingkatDepresi
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateTingkatDepresiRequest $request, TingkatDepresi $tingkatDepresi)
+    public function update(UpdateTingkatDepresiRequest $request, $tingkatDepresi)
     {
-        //
+        $valid = $request->validate([
+            'depresi' => 'required'
+        ]);
+        $status = TingkatDepresi::find($tingkatDepresi)->update($valid);
+        if ($status) {
+            return redirect()->route('depresi.index')->with('pesan', '<div class="alert alert-success p-3 mt-3" role="alert">Daftar Depresi telah diupdate</div>');
+        }
+        return redirect()->route('depresi.index')->with('pesan', '<div class="alert alert-warning p-3 mt-3" role="alert">Daftar Depresi gagal diupdate</div>');
     }
 
     /**
@@ -79,8 +95,12 @@ class TingkatDepresiController extends Controller
      * @param  \App\Models\TingkatDepresi  $tingkatDepresi
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TingkatDepresi $tingkatDepresi)
+    public function destroy($tingkatDepresi)
     {
-        //
+        // dd($tingkatDepresi);
+        TingkatDepresi::find($tingkatDepresi)->delete();
+        return redirect()->route('depresi.index')->with('pesan', '<div class="alert alert-success p-3 mt-3" role="alert">
+        Daftar Depresi telah dihapus
+        </div>');
     }
 }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Diagnosa;
 use App\Http\Requests\StoreDiagnosaRequest;
 use App\Http\Requests\UpdateDiagnosaRequest;
+use App\Models\Gejala;
+use App\Models\KondisiUser;
 
 class DiagnosaController extends Controller
 {

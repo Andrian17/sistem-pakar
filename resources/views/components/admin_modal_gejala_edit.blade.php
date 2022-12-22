@@ -7,7 +7,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          {{-- form edit --}}
+          {{-- form --}}
           <form id="edit-gejala" action="" method="post">
             @method("put")
             @csrf
@@ -43,17 +43,17 @@
         </div>
         <div class="modal-body">
           {{-- form edit --}}
-          <form id="edit-gejala" action="{{ route('gejala.store') }}" method="post">
+          <form id="tambah-gejala" action="{{ route('gejala.store') }}" method="post">
             @csrf
             <div class="input-form d-flex">
                 <input type="hidden" name="id" id="id_gejala">
                 <div class="form-floating mb-3 p-2 mx-2">
-                    <input type="text" class="form-control" id="kode-gejala" placeholder="kode gejala" name="kode_gejala" required>
-                    <label for="kode-gejala">Kode Gejala</label>
+                    <input type="text" class="form-control" id="kode-gejala" name="kode_gejala" required>
+                    <label id='kode_app' for="kode-gejala">Kode Gejala</label>
                 </div>
                 <div class="form-floating mb-3 p-2 mx-2">
-                    <input type="text" class="form-control" id="gejala" placeholder="gejala" name="gejala" required>
-                    <label for="gejala">Gejala</label>
+                    <input type="text" class="form-control" id="gejala" name="gejala" required>
+                    <label id='main_app' for="gejala">Gejala</label>
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">ubah</button>

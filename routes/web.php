@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\DiagnosaController;
 use App\Http\Controllers\GejalaController;
+use App\Http\Controllers\TingkatDepresiController;
+use App\Models\TingkatDepresi;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +28,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('/gejala', GejalaController::class);
+Route::resource('/depresi', TingkatDepresiController::class);
