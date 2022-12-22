@@ -56,7 +56,7 @@
                     <label id='main_app' for="gejala">Gejala</label>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">ubah</button>
+            <button type="submit" class="btn btn-primary">simpan</button>
           </form>
         </div>
         <div class="modal-footer">

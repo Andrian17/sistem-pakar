@@ -4,7 +4,7 @@
 {{-- isi --}}
 @section('admin_content')
     <!-- Page content-->
-    <div class="container text-center">
+    <div class="container text-center mt-lg-5 p-lg-5">
         <div class="row">
           <div class="col-lg-8 justify-content-center mx-auto">
             @if (session()->has('pesan'))

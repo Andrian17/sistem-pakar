@@ -56,7 +56,7 @@
                     <label for="depresi">Depresi</label>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">ubah</button>
+            <button type="submit" class="btn btn-primary">simpan</button>
           </form>
         </div>
         <div class="modal-footer">
@@ -82,4 +82,3 @@
     }
 
 </script>
-
