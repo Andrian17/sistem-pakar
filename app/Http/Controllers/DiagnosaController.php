@@ -22,6 +22,19 @@ class DiagnosaController extends Controller
             'kondisi_user' => KondisiUser::all()
         ];
         // dd($data);
+
+        // $dataDummy = [
+        //     "G001" => "0.6",
+        //     "G002" => "0",
+        //     "G003" => "0.4",
+        //     "G004" => "0",
+        // ];
+        // // dd($dataDummy);
+        // foreach ($dataDummy as $key => $val) {
+        //     echo "<p>key : " . $key . "| val :" . $val . "</p>";
+        //     echo "<br>";
+        // }
+
         return view('clients.form_diagnosa', $data);
     }
 
@@ -43,8 +56,19 @@ class DiagnosaController extends Controller
      */
     public function store(StoreDiagnosaRequest $request)
     {
-        //
+        dd($request->all());
     }
+
+
+
+
+
+
+
+
+
+
+
 
     /**
      * Display the specified resource.

@@ -28,8 +28,8 @@
                             </td>
                             <td>
                                 <div class="pilihan">
-                                    <select class="form-select" aria-label="Default select example" name="{{ $item->kode_gejala }}">
-                                        <option selected>Pilih</option>
+                                    <select class="form-select" aria-label="Default select example" name="kondisi[{{ $item->kode_gejala }}]">
+                                        <option value="0">Pilih</option>
                                         @foreach ($kondisi_user as $kondisi)
                                             <option value='{{ $kondisi->nilai }}'>{{ $kondisi->kondisi }}</option>
                                         @endforeach
