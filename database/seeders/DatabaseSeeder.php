@@ -164,13 +164,13 @@ class DatabaseSeeder extends Seeder
             ),
         ];
 
-        $keputusan = [
-            'kode_keputusan' => 'K001',
-            'kode_gejala' => 'G028',
-            'kode_depresi' => 'P003',
-            'mb' => 0.3,
-            'md' => 0.4
-        ];
+        // $keputusan = [
+        //     'kode_keputusan' => 'K001',
+        //     'kode_gejala' => 'G028',
+        //     'kode_depresi' => 'P003',
+        //     'mb' => 0.3,
+        //     'md' => 0.4
+        // ];
 
         $cf = [
             [
@@ -234,8 +234,108 @@ class DatabaseSeeder extends Seeder
             ],
         ];
 
+        $rule = [
+            [
+                'kode_gejala' => 'G001',
+                'kode_depresi' => 'P001',
+                'mb' => 0.4,
+                'md' => 0.2
+            ],
+            [
+                'kode_gejala' => 'G001',
+                'kode_depresi' => 'P003',
+                'mb' => 0.6,
+                'md' => 0.2
+            ],
+            [
+                'kode_gejala' => 'G002',
+                'kode_depresi' => 'P001',
+                'mb' => 1.0,
+                'md' => 0.2
+            ],
+            [
+                'kode_gejala' => 'G004',
+                'kode_depresi' => 'P004',
+                'mb' => 1.0,
+                'md' => 0.2
+            ],
+            [
+                'kode_gejala' => 'G006',
+                'kode_depresi' => 'P001',
+                'mb' => 1.0,
+                'md' => 0.0
+            ],
+            [
+                'kode_gejala' => 'G006',
+                'kode_depresi' => 'P004',
+                'mb' => 0.8,
+                'md' => 0.2
+            ],
+            [
+                'kode_gejala' => 'G007',
+                'kode_depresi' => 'P002',
+                'mb' => 0.6,
+                'md' => 0.2
+            ],
+            [
+                'kode_gejala' => 'G008',
+                'kode_depresi' => 'P002',
+                'mb' => 1.0,
+                'md' => 0.0
+            ],
+            [
+                'kode_gejala' => 'G009',
+                'kode_depresi' => 'P001',
+                'mb' => 1.0,
+                'md' => 0.0
+            ],
+            [
+                'kode_gejala' => 'G010',
+                'kode_depresi' => 'P003',
+                'mb' => 1.0,
+                'md' => 0.2
+            ],
+            [
+                'kode_gejala' => 'G011',
+                'kode_depresi' => 'P002',
+                'mb' => 0.6,
+                'md' => 0.2
+            ],
+            [
+                'kode_gejala' => 'G012',
+                'kode_depresi' => 'P003',
+                'mb' => 0.8,
+                'md' => 0.2
+            ],
+            [
+                'kode_gejala' => 'G013',
+                'kode_depresi' => 'P002',
+                'mb' => 1.0,
+                'md' => 0.0
+            ],
+            [
+                'kode_gejala' => 'G014',
+                'kode_depresi' => 'P003',
+                'mb' => 1.0,
+                'md' => 0.0
+            ],
+            [
+                'kode_gejala' => 'G015',
+                'kode_depresi' => 'P004',
+                'mb' => 1.0,
+                'md' => 0.0
+            ],
+            [
+                'kode_gejala' => 'G016',
+                'kode_depresi' => 'P004',
+                'mb' => 0.8,
+                'md' => 0.2
+            ],
+        ];
 
-        Keputusan::create($keputusan);
+
+        // Keputusan::create($keputusan);
+        Keputusan::insert($rule);
         Gejala::insert($gejala);
         TingkatDepresi::insert($depresi);
         CertainFactor::insert($cf);
