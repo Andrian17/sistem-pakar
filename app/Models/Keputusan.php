@@ -54,6 +54,12 @@ class Keputusan extends Model
                 'mb' => 0.8,
                 'md' => 0.2
             ],
+            [
+                'kode_depresi' => 'P001',
+                'kode_gejala' => 'G007',
+                'mb' => 0.4,
+                'md' => 0.2
+            ],
 
             // P002 => Depresi Ringan
             [
@@ -74,15 +80,16 @@ class Keputusan extends Model
                 'mb' => 1.0,
                 'md' => 0.0
             ],
+
             [
                 'kode_depresi' => 'P002',
-                'kode_gejala' => 'G007',
-                'mb' => 0.4,
+                'kode_gejala' => 'G008',
+                'mb' => 0.6,
                 'md' => 0.2
             ],
             [
                 'kode_depresi' => 'P002',
-                'kode_gejala' => 'G008',
+                'kode_gejala' => 'G0010',
                 'mb' => 0.6,
                 'md' => 0.2
             ],
@@ -122,12 +129,6 @@ class Keputusan extends Model
                 'kode_depresi' => 'P003',
                 'kode_gejala' => 'G001',
                 'mb' => 0.8,
-                'md' => 0.2
-            ],
-            [
-                'kode_depresi' => 'P003',
-                'kode_gejala' => 'G006',
-                'mb' => 1.0,
                 'md' => 0.0
             ],
             [
@@ -215,12 +216,6 @@ class Keputusan extends Model
                 'kode_gejala' => 'G010',
                 'mb' => 0.8,
                 'md' => 0.0
-            ],
-            [
-                'kode_depresi' => 'P004',
-                'kode_gejala' => 'G011',
-                'mb' => 0.8,
-                'md' => 0.2
             ],
             [
                 'kode_depresi' => 'P004',

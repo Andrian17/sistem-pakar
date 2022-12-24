@@ -6,7 +6,10 @@ use App\Models\Diagnosa;
 use App\Http\Requests\StoreDiagnosaRequest;
 use App\Http\Requests\UpdateDiagnosaRequest;
 use App\Models\Gejala;
+use App\Models\Keputusan;
 use App\Models\KondisiUser;
+use App\Models\TingkatDepresi;
+use Illuminate\Support\Arr;
 
 class DiagnosaController extends Controller
 {
@@ -21,19 +24,6 @@ class DiagnosaController extends Controller
             'gejala' => Gejala::all(),
             'kondisi_user' => KondisiUser::all()
         ];
-        // dd($data);
-
-        // $dataDummy = [
-        //     "G001" => "0.6",
-        //     "G002" => "0",
-        //     "G003" => "0.4",
-        //     "G004" => "0",
-        // ];
-        // // dd($dataDummy);
-        // foreach ($dataDummy as $key => $val) {
-        //     echo "<p>key : " . $key . "| val :" . $val . "</p>";
-        //     echo "<br>";
-        // }
 
         return view('clients.form_diagnosa', $data);
     }
@@ -56,18 +46,74 @@ class DiagnosaController extends Controller
      */
     public function store(StoreDiagnosaRequest $request)
     {
-        dd($request->all());
+        // dd($request->post('kondisi'));
+        $kondisi = $request->post('kondisi');
+        $kodeGejala = [];
+        foreach ($kondisi as $key => $item) {
+            echo "key : " . $key . " item : " . $item;
+            echo "<br>";
+            if ($item != "-") {
+                array_push($kodeGejala, $key);
+            }
+        }
+        // dd($kodeGejala);
+        $keputusan = new Keputusan();
+        $rule = Keputusan::whereIn('kode_gejala', $kodeGejala)->get();
+        $depresi = TingkatDepresi::all();
+
+        $cfTotalTemp = 0;
+        $cf = 0;
+        $cfLama = 0;
+        $cfArr = [];
+        // var_dump($kodeGejala);
+        // penyakit
+        $arrGejala = [];
+        foreach ($depresi as $key) {
+            $cfArr = [];
+            $res = 0;
+            // dd($key->kode_depresi);
+            // $ruleSetiapDepresi = Keputusan::whereIn('kode_gejala', $kodeGejala)->where('kode_depresi', 'P001')->orderBy('kode_gejala', 'ASC')->get();
+            $ruleSetiapDepresi = Keputusan::whereIn('kode_gejala', $kodeGejala)->where('kode_depresi', 'P003')->orderBy('kode_gejala', 'ASC')->get();
+            // dd($ruleSetiapDepresi);
+            foreach ($ruleSetiapDepresi as $ruleKey) {
+                // dd($ruleKey);
+                // setiap penyakit
+                $cf = $ruleKey->mb - $ruleKey->md;
+                array_push($cfArr, $cf);
+            }
+            $res = $this->getGabunganCf($cfArr);
+            // if ($key->kode_depresi == "P002") {
+            dd($cfArr);
+            //     dd($res);
+            // }
+            // print_r($cfArr);
+            // echo "<br>";
+            dd($res);
+            array_push($arrGejala, $res);
+        }
     }
 
+    public function getGabunganCf($cfArr)
+    {
+        echo "<br>----------- <br>";
+        if (count($cfArr) == 1) {
+            return $cfArr;
+        }
+        print_r($cfArr);
+        $cfoldGabungan = $cfArr[0];
+        // $cfoldGabungan = 0;
+        // print_r(count($cfArr));
+        echo "<br> awal : " . $cfoldGabungan . "<br>";
 
-
-
-
-
-
-
-
-
+        for ($i = 0; $i < count($cfArr) - 1; $i++) {
+            $cfoldGabungan = $cfoldGabungan + $cfArr[$i + 1] * (1 - $cfArr[$i]);
+            echo "<br> index : " . $i . "<br>";
+            echo $cfoldGabungan;
+            echo "<br>";
+        }
+        echo "return : " . $cfoldGabungan;
+        return $cfoldGabungan;
+    }
 
 
     /**
