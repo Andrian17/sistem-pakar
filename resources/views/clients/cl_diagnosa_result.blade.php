@@ -55,7 +55,7 @@
                     </table>
 
                     {{-- User --}}
-                    <table class="table table-hover mt-lg-5 border border-info p-3 mx-3">
+                    <table class="table table-hover mt-lg-5 border border-danger p-3 mx-3">
                         <thead>
                             <tr>
                                 <th scope="col">User</th>
@@ -74,7 +74,45 @@
                             @endforeach
                         </tbody>
                     </table>
+
+                    {{-- Tabel Cf Gabungan --}}
+                    {{-- CF Gabungan --}}
+                    <table class="table table-hover mt-lg-5 border border-info p-3 mx-3">
+                        <thead>
+                            <tr>
+                                <th scope="col">Hasil</th>
+                            </tr>
+                        <tr>
+                            <th scope="col">Nilai</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($cf_kombinasi["cf"] as $key)
+                            <tr>
+                                <td>{{ $key }}</td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
+            </div>
+        </div>
+
+        {{-- section 3 --}}
+        <div class="row">
+            <div class="col-md-8 mx-auto">
+                <div class="card my-4">
+                    <div class="card-header">
+                      Hasil
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        {{ $diagnosa_dipilih["kode_depresi"]->kode_depresi }} | {{ $diagnosa_dipilih["kode_depresi"]->depresi }}
+                        </h5>
+                      <p class="card-text">Jadi dapat disimpulkan bahwa pasien mengalami tingkat depresi yaitu Depresi Ringan dengan tingkat kepastian yaitu <span class="fw-semibold fs-4">{{ ($hasil["value"] * 100) }}</span> %</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                  </div>
             </div>
         </div>
        </div>

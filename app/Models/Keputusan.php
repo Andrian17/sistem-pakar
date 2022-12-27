@@ -267,7 +267,7 @@ class Keputusan extends Model
             [
                 'kode_depresi' => 'P004',
                 'kode_gejala' => 'G025',
-                'mb' => 8.2,
+                'mb' => 0.8,
                 'md' => 0.2
             ],
             [

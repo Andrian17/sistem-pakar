@@ -101,6 +101,7 @@ class DiagnosaController extends Controller
                 continue;
             }
         }
+        // dd($arrGejala);
         // echo "<br> arrGejala : ";
         // print_r($arrGejala);
         // echo "<br>";
@@ -139,6 +140,7 @@ class DiagnosaController extends Controller
         // echo "<br> cfArr kode_depresi : ";
         // print_r($cfArr["kode_depresi"]);
         // echo "<br>";
+        // dd($cfoldGabungan);
 
         return [
             "value" => "$cfoldGabungan",
@@ -184,6 +186,22 @@ class DiagnosaController extends Controller
         }
         // dd($gejala_by_user);
 
+        $nilaiPakar = [];
+        foreach ($pakar as $key) {
+            array_push($nilaiPakar, ($key->mb - $key->md));
+        }
+        $nilaiUser = [];
+        foreach ($gejala_by_user as $key) {
+            array_push($nilaiUser, $key[1]);
+        }
+        // dd($nilaiPakar);
+        // dd($nilaiUser);
+
+        $cfKombinasi = $this->getCfCombinasi($nilaiPakar, $nilaiUser);
+        // dd($cfKombinasi);
+        $hasil = $this->getGabunganCf($cfKombinasi);
+        // dd($hasil);
+
         $depresi = TingkatDepresi::all();
         $kondisi = KondisiUser::all();
         return view('clients.cl_diagnosa_result', [
@@ -194,8 +212,27 @@ class DiagnosaController extends Controller
             "depresi" => $depresi,
             "kodisi" => $kondisi,
             "pakar" => $pakar,
-            "gejala_by_user" => $gejala_by_user
+            "gejala_by_user" => $gejala_by_user,
+            "cf_kombinasi" => $cfKombinasi,
+            "hasil" => $hasil
         ]);
+    }
+
+    public function getCfCombinasi($pakar, $user)
+    {
+        $cfComb = [];
+        if (count($pakar) == count($user)) {
+            for ($i = 0; $i < count($pakar); $i++) {
+                $res = $pakar[$i] * $user[$i];
+                array_push($cfComb, floatval($res));
+            }
+            return [
+                "cf" => $cfComb,
+                "kode_depresi" => ["0"]
+            ];
+        } else {
+            return "Data tidak valid";
+        }
     }
 
 
