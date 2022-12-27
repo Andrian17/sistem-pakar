@@ -71,7 +71,7 @@ class DiagnosaController extends Controller
                 echo "key : $key, val : $val";
                 echo "<br>";
                 array_push($kodeGejala, $key);
-                array_push($bobotPilihan, array($key => $val));
+                array_push($bobotPilihan, array($key, $val));
             }
         }
 
@@ -90,7 +90,6 @@ class DiagnosaController extends Controller
             if (count($ruleSetiapDepresi) > 0) {
                 foreach ($ruleSetiapDepresi as $ruleKey) {
                     $cf = $ruleKey->mb - $ruleKey->md;
-                    print "<br> cf : $cf <br>";
                     array_push($cfArr["cf"], $cf);
                     array_push($cfArr["kode_depresi"], $ruleKey->kode_depresi);
                 }
@@ -102,9 +101,9 @@ class DiagnosaController extends Controller
                 continue;
             }
         }
-        echo "<br> arrGejala : ";
-        print_r($arrGejala);
-        echo "<br>";
+        // echo "<br> arrGejala : ";
+        // print_r($arrGejala);
+        // echo "<br>";
 
         $diagnosa_id = uniqid();
         $ins =  Diagnosa::create([
@@ -118,9 +117,9 @@ class DiagnosaController extends Controller
 
     public function getGabunganCf($cfArr)
     {
-        echo "<br> cfArr : ";
-        print_r($cfArr);
-        echo "<br>";
+        // echo "<br> cfArr : ";
+        // print_r($cfArr);
+        // echo "<br>";
         // dd($cfArr);
         if (!$cfArr["cf"]) {
             return 0;
@@ -136,10 +135,10 @@ class DiagnosaController extends Controller
         for ($i = 0; $i < count($cfArr["cf"]) - 1; $i++) {
             $cfoldGabungan = $cfoldGabungan + $cfArr["cf"][$i + 1] * (1 - $cfoldGabungan);
         }
-        echo "<br>cfGabungan return : $cfoldGabungan";
-        echo "<br> cfArr kode_depresi : ";
-        print_r($cfArr["kode_depresi"]);
-        echo "<br>";
+        // echo "<br>cfGabungan return : $cfoldGabungan";
+        // echo "<br> cfArr kode_depresi : ";
+        // print_r($cfArr["kode_depresi"]);
+        // echo "<br>";
 
         return [
             "value" => "$cfoldGabungan",
@@ -164,25 +163,27 @@ class DiagnosaController extends Controller
             }
         }
         // dd($diagnosa_dipilih);
+        // dd($gejala);
 
         $kodeGejala = [];
         foreach ($gejala as $key) {
-            foreach ($key as $value) {
-                array_push($kodeGejala, array_search($value, $key));
-            }
+            array_push($kodeGejala, $key[0]);
         }
-        $kode_depresi = $diagnosa_dipilih["kode_depresi"]->kode_depresi;
-        // dd($kode_depresi);
         // dd($kodeGejala);
-        // dd($gejala);
+        $kode_depresi = $diagnosa_dipilih["kode_depresi"]->kode_depresi;
         $pakar = Keputusan::whereIn("kode_gejala", $kodeGejala)->where("kode_depresi", $kode_depresi)->get();
         // dd($pakar);
+        $gejala_by_user = [];
+        foreach ($pakar as $key) {
+            $i = 0;
+            foreach ($gejala as $gKey) {
+                if ($gKey[0] == $key->kode_gejala) {
+                    array_push($gejala_by_user, $gKey);
+                }
+            }
+        }
+        // dd($gejala_by_user);
 
-
-
-        // dd($diagnosa_dipilih["kode_depresi"]);
-        // dd($kondisi);
-        // dd($gejala);
         $depresi = TingkatDepresi::all();
         $kondisi = KondisiUser::all();
         return view('clients.cl_diagnosa_result', [
@@ -192,7 +193,8 @@ class DiagnosaController extends Controller
             "data_diagnosa" => $data_diagnosa,
             "depresi" => $depresi,
             "kodisi" => $kondisi,
-            "pakar" => $pakar
+            "pakar" => $pakar,
+            "gejala_by_user" => $gejala_by_user
         ]);
     }
 

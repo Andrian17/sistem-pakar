@@ -29,47 +29,48 @@
         <div class="row">
             <div class="col-lg-10 mx-auto">
                 <div class="d-flex ">
-                    <table class="table table-hover mt-lg-5">
-                        <thead>
-                            <tr>
-                                <th scope="col">User</th>
-                            </tr>
-                          <tr>
-                            <th scope="col">No</th>
-                            <th scope="col">Gejala</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($gejala as $key => $val)
-                            <tr>
-                                @foreach ($val as $item)
-                                    <td>#</td>
-                                    <td>{!! array_search($item, $val) !!} | {{ ($item) }}</td>
-                                @endforeach
-                            </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-
                     {{-- Pakar --}}
-                    <table class="table table-hover mt-lg-5">
+                    <table class="table table-hover mt-lg-5 border border-primary p-3 mx-3">
                         <thead>
                             <tr>
-                                <th scope="col">Pakar</th>
+                                <th scope="col" class="d-flex justify-content-center" colspan="3">Pakar</th>
                             </tr>
                             <tr>
-                            <th scope="col">Gejala</th>
-                            <th scope="col">Nilai (MB - MD)</th>
+                                <th scope="col">No</th>
+                                <th scope="col">Gejala</th>
+                                <th scope="col">Nilai (MB - MD)</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($pakar as $item)
                                 <tr>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>
                                         {{ $item->kode_gejala }} | {{ $item->kode_depresi }}
                                     </td>
                                     <td>{{ $item->mb - $item->md }}</td>
                                 </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+
+                    {{-- User --}}
+                    <table class="table table-hover mt-lg-5 border border-info p-3 mx-3">
+                        <thead>
+                            <tr>
+                                <th scope="col">User</th>
+                            </tr>
+                          <tr>
+                              <th scope="col">Gejala</th>
+                            <th scope="col">Nilai</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($gejala_by_user as $key)
+                            <tr>
+                                <td>{{ $key[0] }}</td>
+                                <td>{{ $key[1] }}</td>
+                            </tr>
                             @endforeach
                         </tbody>
                     </table>
