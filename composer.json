@@ -13,6 +13,7 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
+        "itsgoingd/clockwork": "^5.1",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.0.1",
         "laravel/ui": "^4.1",

@@ -11,10 +11,5 @@ class Diagnosa extends Model
     protected $table = 'diagnosas';
 
     protected $guard = ["id"];
-    protected $fillable = ["diagnosa_id", "kode_depresi", "max_depresi", "kondisi"];
-
-    public function depresi()
-    {
-        return $this->belongsTo(TingkatDepresi::class, 'kode_depresi', 'kode_depresi');
-    }
+    protected $fillable = ["diagnosa_id", "data_diagnosa", "kondisi"];
 }

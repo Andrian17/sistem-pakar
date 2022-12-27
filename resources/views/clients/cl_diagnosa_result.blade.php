@@ -18,8 +18,8 @@
                   <tr>
                     <th scope="row">1</th>
                     <td>{{ $diagnosa->diagnosa_id }}</td>
-                    <td> {{ $diagnosa->kode_depresi }} | {{ $diagnosa->depresi->depresi }}</td>
-                    <td>{{ ($diagnosa->max_depresi * 100) }} %</td>
+                    <td> {{ $diagnosa_dipilih["kode_depresi"]->kode_depresi }} | {{ $diagnosa_dipilih["kode_depresi"]->depresi }}</td>
+                    <td>{{ ($diagnosa_dipilih["value"] * 100) }} %</td>
                   </tr>
                 </tbody>
             </table>
@@ -32,47 +32,47 @@
                     <table class="table table-hover mt-lg-5">
                         <thead>
                             <tr>
-                                <th scope="col">Pakar</th>
-                            </tr>
-                          <tr>
-                            <th scope="col">No</th>
-                            <th scope="col">Kode Gejala</th>
-                            <th scope="col">Nilai</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($pakar as $key)
-                                <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $key->kode_gejala }}</td>
-                                    <td>{{ ($key->mb - $key->md) }}</td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                      </table>
-
-                      {{-- User --}}
-                      <table class="table table-hover mt-lg-5">
-                        <thead>
-                            <tr>
                                 <th scope="col">User</th>
                             </tr>
                           <tr>
                             <th scope="col">No</th>
-                            <th scope="col">Kode Gejala</th>
-                            <th scope="col">Nilai</th>
+                            <th scope="col">Gejala</th>
                           </tr>
                         </thead>
                         <tbody>
-                            @foreach ($kondisi as $key => $val)
+                            @foreach ($gejala as $key => $val)
+                            <tr>
+                                @foreach ($val as $item)
+                                    <td>#</td>
+                                    <td>{!! array_search($item, $val) !!} | {{ ($item) }}</td>
+                                @endforeach
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+
+                    {{-- Pakar --}}
+                    <table class="table table-hover mt-lg-5">
+                        <thead>
+                            <tr>
+                                <th scope="col">Pakar</th>
+                            </tr>
+                            <tr>
+                            <th scope="col">Gejala</th>
+                            <th scope="col">Nilai (MB - MD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($pakar as $item)
                                 <tr>
-                                    <td>{{ $loop->iteration }}</td>
-                                    <td>{{ $key }}</td>
-                                    <td>{{ $val }}</td>
+                                    <td>
+                                        {{ $item->kode_gejala }} | {{ $item->kode_depresi }}
+                                    </td>
+                                    <td>{{ $item->mb - $item->md }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
-                      </table>
+                    </table>
                 </div>
             </div>
         </div>

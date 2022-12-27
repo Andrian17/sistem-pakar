@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('diagnosas', function (Blueprint $table) {
+        Schema::create('kode__gejalas', function (Blueprint $table) {
             $table->id();
-            $table->char('diagnosa_id');
-            $table->json('data_diagnosa');
-            $table->json('kondisi');
+            $table->json('body');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('diagnosas');
+        Schema::dropIfExists('kode__gejalas');
     }
 };

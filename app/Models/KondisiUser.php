@@ -14,10 +14,6 @@ class KondisiUser extends Model
     {
         $cf_user = [
             [
-                "kondisi" => "Tidak",
-                'nilai' => 0.0
-            ],
-            [
                 "kondisi" => "Mungkin",
                 'nilai' => 0.4
             ],
@@ -28,6 +24,10 @@ class KondisiUser extends Model
             [
                 "kondisi" => "Hampir Pasti",
                 'nilai' => 0.8
+            ],
+            [
+                "kondisi" => "Pasti",
+                'nilai' => 1.0
             ],
         ];
         return $cf_user;
