@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Diagnosa;
 use App\Http\Requests\StoreDiagnosaRequest;
 use App\Http\Requests\UpdateDiagnosaRequest;
+use App\Models\Artikel;
 use App\Models\Gejala;
 use App\Models\Keputusan;
 use App\Models\Kode_Gejala;
@@ -118,6 +119,10 @@ class DiagnosaController extends Controller
 
     public function getGabunganCf($cfArr)
     {
+        // if ($cfArr["kode_depresi"][0] == "P004") {
+        //     # code...
+        //     dd($cfArr);
+        // }
         // echo "<br> cfArr : ";
         // print_r($cfArr);
         // echo "<br>";
@@ -131,10 +136,15 @@ class DiagnosaController extends Controller
                 "kode_depresi" => $cfArr["kode_depresi"][0]
             ];
         }
+
         $cfoldGabungan = $cfArr["cf"][0];
 
+        // foreach ($cfArr["cf"] as $cf) {
+        //     $cfoldGabungan = $cfoldGabungan + ($cf * (1 - $cfoldGabungan));
+        // }
+
         for ($i = 0; $i < count($cfArr["cf"]) - 1; $i++) {
-            $cfoldGabungan = $cfoldGabungan + $cfArr["cf"][$i + 1] * (1 - $cfoldGabungan);
+            $cfoldGabungan = $cfoldGabungan + ($cfArr["cf"][$i + 1] * (1 - $cfoldGabungan));
         }
         // echo "<br>cfGabungan return : $cfoldGabungan";
         // echo "<br> cfArr kode_depresi : ";
@@ -202,19 +212,18 @@ class DiagnosaController extends Controller
         $hasil = $this->getGabunganCf($cfKombinasi);
         // dd($hasil);
 
-        $depresi = TingkatDepresi::all();
-        $kondisi = KondisiUser::all();
+        $artikel = Artikel::where('kode_depresi', $kode_depresi)->first();
+
         return view('clients.cl_diagnosa_result', [
             "diagnosa" => $diagnosa,
             "diagnosa_dipilih" => $diagnosa_dipilih,
             "gejala" => $gejala,
             "data_diagnosa" => $data_diagnosa,
-            "depresi" => $depresi,
-            "kodisi" => $kondisi,
             "pakar" => $pakar,
             "gejala_by_user" => $gejala_by_user,
             "cf_kombinasi" => $cfKombinasi,
-            "hasil" => $hasil
+            "hasil" => $hasil,
+            "artikel" => $artikel
         ]);
     }
 
@@ -234,18 +243,6 @@ class DiagnosaController extends Controller
             return "Data tidak valid";
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     /**

@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('certain_factor', function (Blueprint $table) {
+        Schema::create('artikels', function (Blueprint $table) {
             $table->id();
-            $table->string('kondisi');
-            $table->float('cf');
+            $table->char('url_gambar');
+            $table->char('kode_depresi');
+            $table->string('judul');
+            $table->text('isi');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('certain_factors');
+        Schema::dropIfExists('artikels');
     }
 };

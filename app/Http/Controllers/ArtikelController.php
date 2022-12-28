@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Kode_Gejala;
-use App\Http\Requests\StoreKode_GejalaRequest;
-use App\Http\Requests\UpdateKode_GejalaRequest;
+use App\Models\Artikel;
+use App\Http\Requests\StoreArtikelRequest;
+use App\Http\Requests\UpdateArtikelRequest;
 
-class KodeGejalaController extends Controller
+class ArtikelController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class KodeGejalaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreKode_GejalaRequest  $request
+     * @param  \App\Http\Requests\StoreArtikelRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreKode_GejalaRequest $request)
+    public function store(StoreArtikelRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class KodeGejalaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Kode_Gejala  $kode_Gejala
+     * @param  \App\Models\Artikel  $artikel
      * @return \Illuminate\Http\Response
      */
-    public function show(Kode_Gejala $kode_Gejala)
+    public function show(Artikel $artikel)
     {
         //
     }
@@ -53,10 +53,10 @@ class KodeGejalaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Kode_Gejala  $kode_Gejala
+     * @param  \App\Models\Artikel  $artikel
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kode_Gejala $kode_Gejala)
+    public function edit(Artikel $artikel)
     {
         //
     }
@@ -64,11 +64,11 @@ class KodeGejalaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateKode_GejalaRequest  $request
-     * @param  \App\Models\Kode_Gejala  $kode_Gejala
+     * @param  \App\Http\Requests\UpdateArtikelRequest  $request
+     * @param  \App\Models\Artikel  $artikel
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateKode_GejalaRequest $request, Kode_Gejala $kode_Gejala)
+    public function update(UpdateArtikelRequest $request, Artikel $artikel)
     {
         //
     }
@@ -76,10 +76,10 @@ class KodeGejalaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Kode_Gejala  $kode_Gejala
+     * @param  \App\Models\Artikel  $artikel
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kode_Gejala $kode_Gejala)
+    public function destroy(Artikel $artikel)
     {
         //
     }

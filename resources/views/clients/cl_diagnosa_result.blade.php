@@ -2,7 +2,7 @@
 @section('title', 'Form Diagnosa')
 
 @section('cl_content')
-    <div class="contaner">
+    <div class="container">
        <div class="row mx-auto">
         <div class="col-lg-10 mx-auto">
             <table class="table table-hover">
@@ -27,13 +27,13 @@
 
         {{-- section 2 --}}
         <div class="row">
-            <div class="col-lg-10 mx-auto">
+            <div class="col-lg-12 mx-auto">
                 <div class="d-flex ">
                     {{-- Pakar --}}
                     <table class="table table-hover mt-lg-5 border border-primary p-3 mx-3">
                         <thead>
                             <tr>
-                                <th scope="col" class="d-flex justify-content-center" colspan="3">Pakar</th>
+                                <th scope="col">Pakar</th>
                             </tr>
                             <tr>
                                 <th scope="col">No</th>
@@ -60,10 +60,10 @@
                             <tr>
                                 <th scope="col">User</th>
                             </tr>
-                          <tr>
-                              <th scope="col">Gejala</th>
+                            <tr>
+                                <th scope="col">Gejala</th>
                             <th scope="col">Nilai</th>
-                          </tr>
+                            </tr>
                         </thead>
                         <tbody>
                             @foreach ($gejala_by_user as $key)
@@ -82,9 +82,9 @@
                             <tr>
                                 <th scope="col">Hasil</th>
                             </tr>
-                        <tr>
-                            <th scope="col">Nilai</th>
-                        </tr>
+                            <tr>
+                                <th scope="col">Nilai</th>
+                            </tr>
                         </thead>
                         <tbody>
                             @foreach ($cf_kombinasi["cf"] as $key)
@@ -100,7 +100,7 @@
 
         {{-- section 3 --}}
         <div class="row">
-            <div class="col-md-8 mx-auto">
+            <div class="col-md-10 mx-auto">
                 <div class="card my-4">
                     <div class="card-header">
                       Hasil
@@ -109,12 +109,15 @@
                       <h5 class="card-title">
                         {{ $diagnosa_dipilih["kode_depresi"]->kode_depresi }} | {{ $diagnosa_dipilih["kode_depresi"]->depresi }}
                         </h5>
-                      <p class="card-text">Jadi dapat disimpulkan bahwa pasien mengalami tingkat depresi yaitu Depresi Ringan dengan tingkat kepastian yaitu <span class="fw-semibold fs-4">{{ ($hasil["value"] * 100) }}</span> %</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <p class="card-text">Jadi dapat disimpulkan bahwa pasien mengalami tingkat depresi yaitu Depresi Ringan dengan tingkat kepastian yaitu <span class="fw-semibold fs-4">{{ round(($hasil["value"] * 100), 2) }}</span> %</p>
+                      {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
                     </div>
                   </div>
             </div>
         </div>
+
+        @include('components.cl_article')
+
        </div>
     </div>
 @endsection
