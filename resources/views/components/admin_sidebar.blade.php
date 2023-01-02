@@ -13,18 +13,31 @@
     <li class="nav-heading">Pengetahuan</li>
 
     <li class="nav-item">
+      <a class="nav-link collapsed" href="{{ route('spk.create') }}">
+        <i class="bi bi-clipboard-check"></i>
+        <span>Diagnosa</span>
+      </a>
+    </li><!-- End Gejala Page Nav -->
+    <li class="nav-item">
       <a class="nav-link collapsed" href="{{ route('gejala.index') }}">
         <i class="bi bi-activity"></i>
         <span>Gejala</span>
       </a>
-    </li><!-- End Profile Page Nav -->
+    </li><!-- End Gejala Page Nav -->
 
     <li class="nav-item">
       <a class="nav-link collapsed" href="{{ route('depresi.index') }}">
         <i class="bi bi-patch-question"></i>
         <span>Depresi</span>
       </a>
-    </li><!-- End F.A.Q Page Nav -->
+    </li><!-- End Depresi Page Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{{ route('spk.index') }}">
+        <i class="bi bi-clipboard2-data"></i>
+        <span>Hasil Diagnosa</span>
+      </a>
+    </li><!-- End Depresi Page Nav -->
 
     <li class="nav-heading">Pengaturan</li>
 
@@ -45,12 +58,12 @@
         </li>
       </ul>
     </li><!-- End Forms Nav -->
-  
 
- 
+
+
 
     <li class="nav-item" style="nowrap">
-      
+
       <a class="nav-link collapsed" href="{{ route('logout') }}"
         onclick="event.preventDefault();
                       document.getElementById('logout-form').submit();">

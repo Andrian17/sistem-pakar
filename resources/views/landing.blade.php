@@ -84,8 +84,12 @@
             </a>
             <ul>
                 <li>
-                    <a class="shadow-hover curent-shadow" href="#">Diagnosa</a>
+                    <a class="shadow-hover" href="/dashboard">Dashboard</a>
+                </li>
+                <li>
+                    <a class="shadow-hover curent-shadow" href="#">Menu</a>
                     <ul>
+                        <li><a href="{{ route('spk.create') }}">Diagnosa</a></li>
                         <li><a href="/gejala">Gejala</a></li>
                         <li><a href="/depresi">Depresi</a></li>
                     </ul>
@@ -99,9 +103,12 @@
                 <li>
                     <a class="shadow-hover" href="#kontak">Kontak</a>
                 </li>
+
+                @guest()
                 <li>
-                    <a class="shadow-hover" href="/log">Login</span></a>
+                    <a class="shadow-hover" href="/login">Login</span></a>
                 </li>
+                @endguest
             </ul>
         </div>
     </nav>
@@ -374,7 +381,7 @@
 
 
 
-        
+
 
         <div class="section footer padding-top-big background-image-cover"
             style="background-image: url(img/footer.jpg);">
@@ -408,7 +415,7 @@
             </div>
         </div>
 
-    
+
 
 
         <div class="section footer padding-top-big background-image-cover"

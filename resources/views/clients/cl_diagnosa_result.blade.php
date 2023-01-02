@@ -4,7 +4,7 @@
 @section('cl_content')
 
     <div class="container">
-       <div class="row mx-auto">
+       <div class="row mx-auto my-4">
         <div class="col-lg-10 mx-auto">
 
             <table class="table table-hover">
@@ -117,13 +117,10 @@
                   </div>
             </div>
         </div>
-
-        <div >
-            {{-- <a style="align-content: flex-end" href="/" class="btn btn-primary"> KEMBALI</a> --}}
-        </div>
-
         @include('components.cl_article')
-
+        <div >
+            <a style="align-content: flex-end" href="/dashboard" class="btn btn-primary"> KEMBALI</a>
+        </div>
        </div>
     </div>
 @endsection

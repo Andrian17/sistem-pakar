@@ -11,6 +11,7 @@ use App\Models\Keputusan;
 use App\Models\Kode_Gejala;
 use App\Models\KondisiUser;
 use App\Models\TingkatDepresi;
+use GuzzleHttp\Middleware;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
@@ -27,12 +28,11 @@ class DiagnosaController extends Controller
      */
     public function index()
     {
-        $data = [
-            'gejala' => Gejala::all(),
-            'kondisi_user' => KondisiUser::all()
-        ];
+        $diagnosa = Diagnosa::all();
 
-        return view('clients.form_diagnosa', $data);
+        return view('admin.diagnosa.admin_semua_diagnosa', [
+            "diagnosa" => $diagnosa,
+        ]);
     }
 
     /**
@@ -42,18 +42,13 @@ class DiagnosaController extends Controller
      */
     public function create()
     {
-        //
+        $data = [
+            'gejala' => Gejala::all(),
+            'kondisi_user' => KondisiUser::all()
+        ];
+
+        return view('clients.form_diagnosa', $data);
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * Store a newly created resource in storage.
@@ -63,11 +58,11 @@ class DiagnosaController extends Controller
      */
     public function store(StoreDiagnosaRequest $request)
     {
-        $filteredArray= $request->post('kondisi');
-        $kondisi = array_filter($filteredArray, function($value) {
+        $filteredArray = $request->post('kondisi');
+        $kondisi = array_filter($filteredArray, function ($value) {
             return $value !== null;
         });
-        
+
         // dd($kondisi);
         $kodeGejala = [];
         $bobotPilihan = [];

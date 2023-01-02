@@ -2,7 +2,7 @@
 @section('main_section')
     {{-- Navbar --}}
     <header>
-        <img src="{{ asset('depresi/opera.png') }}" alt="image description" style="max-width: 100%;
+        <img src="{{ asset('depresi-assets/opera.png') }}" alt="image description" style="max-width: 100%;
 height: auto;
 object-fit: cover;">
         {{-- @include('components.cl_navbar') --}}

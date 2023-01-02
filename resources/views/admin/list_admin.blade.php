@@ -10,12 +10,12 @@
           <h1>Dashboard</h1>
           <nav>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">Admin</a></li>
+              <li class="breadcrumb-item"><a href="/dashboard">Admin</a></li>
               <li class="breadcrumb-item active">Daftar Admin</li>
             </ol>
           </nav>
         </div><!-- End Page Title -->
-    
+
         <section class="section dashboard">
           <div class="row">
             <style>
@@ -24,7 +24,7 @@
                     font-size: 14px;
                     color: #666;
                 }
-                
+
                 .card-title {
                     font-size: 18px;
                     font-weight: bold;
@@ -41,17 +41,17 @@
                     </div>
                 @endforeach
             </div>
-            
-            
-    
-           
-    
-            
-    
+
+
+
+
+
+
+
           </div>
         </section>
-    
+
       </main><!-- End #main -->
-    
+
 
 @endsection

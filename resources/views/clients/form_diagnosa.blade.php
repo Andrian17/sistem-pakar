@@ -5,9 +5,9 @@
 @section('cl_content')
     <!-- Page content-->
     <div class="container text-center">
-        <div class="row">
-          <div class="col-lg-10">
-            <form action="{{ route('spk.store') }}" method="post">
+        <div class="row mx-auto">
+          <div class="col-lg-10 mx-auto">
+            <form action="{{ route('spk.store') }}" method="post" class="p-4 m-2">
                 @csrf()
                 <table class="table">
                     <thead>
@@ -42,7 +42,7 @@
 
                     </tbody>
                 </table>
-                <button type="submit">Submit</button>
+                <button class="btn btn-primary" type="submit">Submit</button>
             </form>
           </div>
           {{-- <div class="col">
