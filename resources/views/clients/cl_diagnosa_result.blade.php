@@ -116,7 +116,9 @@
             </div>
         </div>
 
-        @include('components.cl_article')
+        @if ($artikel)
+            @include('components.cl_article')
+        @endif
 
        </div>
     </div>
