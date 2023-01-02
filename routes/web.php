@@ -5,6 +5,9 @@ use App\Http\Controllers\GejalaController;
 use App\Http\Controllers\TingkatDepresiController;
 use App\Models\Diagnosa;
 use App\Models\TingkatDepresi;
+use App\Models\KondisiUser;
+use App\Models\Gejala;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +22,53 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('landing');
+});
+
+Route::get('/dashboard', function () {
+    $data = [
+        'gejala' => Gejala::all(),
+        'kondisi_user' => KondisiUser::all(),
+        'user' => User::all(),
+        'tingkat_depresi' => TingkatDepresi::all()
+
+    ];
+    return view('admin.dashboard', $data);
+});
+
+Route::get('/dashboard/admin', function () {
+    $data = [
+        'user' => User::all()
+    ];
+    return view('admin.list_admin', $data);
+});
+
+Route::get('/dashboard/add_admin' , function () {
+    auth()->logout();
+    return view('admin.add_admin');
+    
+});
+
+Route::get('/log', function () {
+    return view('login');
+});
+
+Route::get('/form-faq', function () {
+    $data = [
+        'gejala' => Gejala::all(),
+        'kondisi_user' => KondisiUser::all()
+    ];
+    
+    return view('faq', $data);
+});
+
+Route::get('/form', function () {
+    $data = [
+        'gejala' => Gejala::all(),
+        'kondisi_user' => KondisiUser::all()
+    ];
+    
+    return view('form', $data);
 });
 
 Route::resource('/spk', DiagnosaController::class);

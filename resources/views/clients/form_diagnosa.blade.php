@@ -19,25 +19,26 @@
                     </thead>
                     <tbody>
                         @foreach ($gejala as $item)
-                        <tr>
-                            <th scope="row">{{ $loop->iteration }}</th>
-                            <td>
-                                <div class="pertanyaan">
-                                    <p>Apakah and merasa {{ $item->gejala }} ?</p>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="pilihan">
-                                    <select class="form-select" aria-label="Default select example" name="kondisi[{{ $item->kode_gejala }}]">
-                                        <option value="#">Pilih</option>
-                                        @foreach ($kondisi_user as $kondisi)
-                                            <option value='{{ $kondisi->nilai }}'>{{ $kondisi->kondisi }}</option>
-                                        @endforeach
-                                        </select>
-                                </div>
-                            </td>
-                          </tr>
-                        @endforeach
+    <tr>
+        <th scope="row">{{ $loop->iteration }}</th>
+        <td>
+            <div class="pertanyaan">
+                <p>Apakah anda merasa {{ $item->gejala }} ?</p>
+            </div>
+        </td>
+        <td>
+            <div class="pilihan">
+                @foreach ($kondisi_user as $kondisi)
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="kondisi[{{ $item->kode_gejala }}]" id="kondisi_{{ $kondisi->nilai }}" value="{{ $kondisi->nilai }}">
+                        <label class="form-check-label" for="kondisi_{{ $kondisi->nilai }}" style="display: block; font-size: smaller;">{{ $kondisi->kondisi }}</label>
+                    </div>
+                @endforeach
+            </div>
+        </td>
+    </tr>
+@endforeach
+
 
                     </tbody>
                 </table>
@@ -52,5 +53,4 @@
           </div> --}}
         </div>
     </div>
-
 @endsection

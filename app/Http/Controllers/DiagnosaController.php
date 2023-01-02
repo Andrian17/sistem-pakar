@@ -63,7 +63,11 @@ class DiagnosaController extends Controller
      */
     public function store(StoreDiagnosaRequest $request)
     {
-        $kondisi = $request->post('kondisi');
+        $filteredArray= $request->post('kondisi');
+        $kondisi = array_filter($filteredArray, function($value) {
+            return $value !== null;
+        });
+        
         // dd($kondisi);
         $kodeGejala = [];
         $bobotPilihan = [];
@@ -163,7 +167,7 @@ class DiagnosaController extends Controller
         $diagnosa = Diagnosa::where('diagnosa_id', $diagnosa_id)->first();
         $gejala = json_decode($diagnosa->kondisi, true);
         $data_diagnosa = json_decode($diagnosa->data_diagnosa, true);
-        // dd($data_diagnosa);
+        //dd($data_diagnosa);
         $int = 0.0;
         $diagnosa_dipilih = [];
         foreach ($data_diagnosa as $val) {
