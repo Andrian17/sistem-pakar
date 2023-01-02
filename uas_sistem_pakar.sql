@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Waktu pembuatan: 28 Des 2022 pada 08.23
+-- Waktu pembuatan: 02 Jan 2023 pada 23.56
 -- Versi server: 5.7.33
--- Versi PHP: 7.4.19
+-- Versi PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,11 +42,11 @@ CREATE TABLE `artikels` (
 --
 
 INSERT INTO `artikels` (`id`, `url_gambar`, `kode_depresi`, `judul`, `isi`, `created_at`, `updated_at`) VALUES
-(1, 'https://via.placeholder.com/640x480.png/0011ff?text=emotion+qui', 'P002', 'Inventore eum aperiam eligendi voluptate ipsa.', 'Ut eveniet quaerat aut. Voluptas et sint sit voluptas et nesciunt vel. Cum ipsam et iure quo sit perspiciatis labore. Architecto ut est qui quis dolores. Corporis nesciunt magni distinctio nihil ducimus tempora. Laborum et quaerat sequi quia consequatur nam illo. Deleniti sit itaque ut fuga accusamus quia. Laborum in est voluptas pariatur temporibus. Cum ut dolor possimus minima hic dolores. Ut et aut nihil recusandae dolores. Sit nihil modi doloremque ad consequuntur. Nulla autem totam est suscipit.', '2022-12-28 03:27:28', '2022-12-28 03:27:28'),
-(2, 'https://via.placeholder.com/640x480.png/00dd33?text=emotion+dolorem', 'P002', 'Amet animi vitae dolorum aut.', 'Nulla dolores et rerum vel qui. Vel quo vel ipsum perspiciatis. Reiciendis tempora reprehenderit eius voluptas. Aut nam necessitatibus consequatur earum earum natus. Dolorem nulla ea tenetur et et. Enim vitae aut enim mollitia temporibus voluptas. Harum modi provident similique asperiores et voluptate. Nisi laborum dolorem laboriosam distinctio fugit. Quisquam voluptas veniam repellendus molestiae ex. Voluptates consequatur qui explicabo non. Voluptas est magnam quod officiis placeat sit. Eum dicta aperiam nihil. Quidem rerum aut tenetur animi voluptas.', '2022-12-28 03:27:28', '2022-12-28 03:27:28'),
-(3, 'https://via.placeholder.com/640x480.png/00aadd?text=emotion+quia', 'P002', 'Nesciunt dolorem ut sapiente praesentium eaque omnis.', 'Beatae illo dolores quo. Eaque sapiente aliquid ab facere ut. Et sunt necessitatibus sed ex. Magnam ea fugit vero optio. Nisi perferendis illo quisquam mollitia dignissimos. Impedit et at ipsum. Eligendi et non ipsa qui debitis placeat totam. Veritatis qui ratione quia itaque optio nemo ut similique. Numquam quasi totam officiis unde est sunt quo. In ratione rerum doloribus temporibus. Et molestias rerum saepe repellat dolores corrupti illum. Magnam quos molestiae et. Modi dolores atque sit.', '2022-12-28 03:27:28', '2022-12-28 03:27:28'),
-(4, 'https://via.placeholder.com/640x480.png/00bbaa?text=emotion+qui', 'P002', 'Facilis iste soluta maxime qui sequi voluptatem quae.', 'Tenetur est a ut eos repellendus aut vitae. Odio odio est nobis esse quia. Fugit soluta atque iure aut. Est possimus ut recusandae. Non ducimus et ipsam dolor ipsam vel sunt amet. Occaecati doloribus molestiae dolorem earum corrupti sint. Alias et vel molestiae minus magni. Repudiandae corrupti repellendus aut harum. Qui alias velit quos voluptatem voluptate eum sint non. Amet nihil ut rerum nemo voluptas. Sit unde minus distinctio. Quam voluptatem consequatur animi.', '2022-12-28 03:27:28', '2022-12-28 03:27:28'),
-(5, 'https://unsplash.com/photos/w818vRg6pdY', 'P001', 'Gangguan Mood', 'Ganggguan mood yang terjadi pada seseorang ini umumnya terjadi karena banyaknya tekanan yang menimpa dirinya dan cenderung terlarut dalam tekanan dapat meningkatkan resiko berkembangnya gangguan mood yang kemudian dapat berubah menjadi depresi terutama depresi mayor. Hal ini terbukti pada suatu penelitian yang menemukan bahwa dalam sekitar empat dari lima kasus, depresi mayor diawali oleh peristiwa kehidupan yang penuh tekanan.', NULL, NULL),
+(1, 'https://via.placeholder.com/640x480.png/003399?text=emotion+explicabo', 'P002', 'Et quas mollitia facilis. Hic dolorem voluptatem aut eum dolorem veritatis.', 'At repellendus non non suscipit ut. Modi architecto aut quae iure possimus temporibus deserunt. Consectetur similique rerum accusamus odio est eligendi excepturi. Et quia ut culpa aut sit laborum. Voluptas iusto facilis repudiandae eos vel. Eveniet est enim nihil nisi. Porro vel ea dignissimos consequatur. Nihil nam et nemo esse. Reiciendis deserunt voluptatibus aut corporis. Alias recusandae ipsa ipsam sunt exercitationem. Tempore cupiditate et voluptas corporis quaerat blanditiis. Ut quia expedita quaerat ab voluptatem sint asperiores minus.', '2023-01-02 20:28:25', '2023-01-02 20:28:25'),
+(2, 'https://via.placeholder.com/640x480.png/00ff33?text=emotion+consequatur', 'P002', 'Ratione deserunt fuga eos tempore.', 'Nostrum debitis quis deserunt hic vitae distinctio eveniet. Soluta reiciendis est modi perspiciatis eos voluptatum. Illo quia ipsa nihil. Nobis incidunt voluptatem quia distinctio soluta est voluptatibus. Et ipsum vitae eos labore rerum neque labore. Cumque dolorum est sint non aut soluta deserunt. Nobis omnis laborum architecto incidunt consequatur. Deserunt voluptatibus quis unde voluptas et aut. Esse nostrum dolor vitae quae consequuntur et. Rerum nulla facilis id repudiandae itaque voluptatem. Ratione vel optio illum dolore qui.', '2023-01-02 20:28:25', '2023-01-02 20:28:25'),
+(3, 'https://via.placeholder.com/640x480.png/00ddee?text=emotion+eaque', 'P002', 'Natus error laborum voluptatem sequi nobis illo at ipsa.', 'Porro commodi est velit placeat. Culpa sit in quis animi magni est. Nostrum consequatur est ab consequatur enim quae repellendus. Impedit tenetur aspernatur ut et quos qui quia. Ipsam sunt quia laboriosam dolorum ipsam molestiae nobis. Quia ut aspernatur aspernatur cupiditate sed et soluta. Dolorum et et ut ex et. Sunt sed inventore ad sit. Deserunt velit ut sint dolor. Ipsa laborum commodi dicta nesciunt. Delectus dignissimos non sit aut error. Debitis quae animi dolor qui. Autem quam asperiores quod aut consectetur et repellat id. Ducimus vero accusamus est et nesciunt.', '2023-01-02 20:28:25', '2023-01-02 20:28:25'),
+(4, 'https://via.placeholder.com/640x480.png/00ee44?text=emotion+veritatis', 'P002', 'Doloribus et et nemo perferendis magni minus dolore.', 'Et temporibus et ut omnis et. Qui quia animi sed. Saepe quia doloribus dolorum. Animi nihil quia ut aliquam quibusdam. Similique aut animi incidunt illum incidunt tenetur. Dolor veniam enim vitae neque nobis itaque. Voluptatem esse illo quia id consequatur temporibus temporibus. Assumenda consectetur error ut asperiores quis eius vel ratione. Aut neque omnis ut quae eius occaecati. Eos possimus praesentium rem unde qui tempora ut corporis.', '2023-01-02 20:28:25', '2023-01-02 20:28:25'),
+(5, 'https://plus.unsplash.com/premium_photo-1668062843172-0129f25a1276?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80', 'P001', 'Gangguan Mood', 'Ganggguan mood yang terjadi pada seseorang ini umumnya terjadi karena banyaknya tekanan yang menimpa dirinya dan cenderung terlarut dalam tekanan dapat meningkatkan resiko berkembangnya gangguan mood yang kemudian dapat berubah menjadi depresi terutama depresi mayor. Hal ini terbukti pada suatu penelitian yang menemukan bahwa dalam sekitar empat dari lima kasus, depresi mayor diawali oleh peristiwa kehidupan yang penuh tekanan.', NULL, NULL),
 (6, 'https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2022/10/04084507/Ini-Ciri-Ciri-Depresi-Ringan-yang-Masih-Sering-Diabaikan.jpg', 'P002', 'Depresi Minor / Depresi Ringan', 'Depresi ringan ini di identikkan dengan depresi minor yang merupakan perasaan melankolis yang berlangsung sebentar dan disebabkan oleh sebuah kejadian yang tragis atau mengandung ancaman, atau kehilangan sesuatu yang penting dalam kehidupan si penderita (Meier, 2000: 20-21). Orang dengan depresi ringan ini setidaknya memiliki 2 dari gejala lainnya dan 2-3 dari gejala utama. (Maslim, 2003, 64).', NULL, NULL),
 (7, 'https://soc-phoenix.s3-ap-southeast-1.amazonaws.com/wp-content/uploads/2017/09/22173906/mental-illness-and-disorders.jpg', 'P003', 'Depresi Sedang', 'Depresi sedang ini di alami oleh penderita selama kurang 2 minggu, dan orang dengan depresi sedang ini mengalami kesulitan nyata untuk meneruskan kegiatan social, pekerjaan dan urusan rumah tangga. Orang dengan depresi sedang ini setidaknya memiliki 2-3 dari gejala utama dan 3-4 dari gejala lainnya (Maslim,  2003: 64).', NULL, NULL),
 (8, 'https://soc-phoenix.s3-ap-southeast-1.amazonaws.com/wp-content/uploads/2017/09/22173906/mental-illness-and-disorders.jpg', 'P004', 'Depresi mayor / Depresi Berat', 'Depresi mayor merupakan salah satu gangguan yang prevalensinya paling tinggi di antara berbagai gangguan (Davidson, 2006: 374). Depresi mayor adalah kemurungan yang dalam dan menyebar luas. Perasaan murung ini mampu menyedot semangat dan energy serta menyelubungi kehidupan si penderita seperti asap yang tebak dan menyesakkan dada. Depresi mayor ini dapat berlangsung cukup lama mulai dari empat belas hari sampai beberapa tahun. Hal ini menyebabkan penderita akan sangat sulit utnuk berfungsi dengan baik di lingkungannya. Orang dengan depresi mayor ini juga terkadang disertai dengan keinginan untuk bunuh diri atau bahkan keinginan untuk mati. Orang yang sangat tertekan, mereka akan mengalami dampak hal-hal yang mengganggu kejiwaan mereka seperti gila, paranoia atau halusinasi pendengaran (Meier, 2000: 25-26).', NULL, NULL);
@@ -71,7 +71,10 @@ CREATE TABLE `diagnosas` (
 --
 
 INSERT INTO `diagnosas` (`id`, `diagnosa_id`, `data_diagnosa`, `kondisi`, `created_at`, `updated_at`) VALUES
-(1, '63abc5cb869eb', '[{\"value\": \"0.52\", \"kode_depresi\": \"P001\"}, {\"value\": \"0.8704\", \"kode_depresi\": \"P002\"}, {\"value\": \"1\", \"kode_depresi\": \"P003\"}, {\"value\": \"0.99616\", \"kode_depresi\": \"P004\"}]', '[[\"G001\", \"0.6\"], [\"G002\", \"0.4\"], [\"G010\", \"0.6\"], [\"G013\", \"0.4\"], [\"G015\", \"0.8\"], [\"G017\", \"0\"], [\"G020\", \"1\"], [\"G024\", \"0\"], [\"G026\", \"0.4\"]]', '2022-12-28 03:27:55', '2022-12-28 03:27:55');
+(1, '63b35fe07d882', '[{\"value\": \"1\", \"kode_depresi\": \"P001\"}, {\"value\": \"0.9712\", \"kode_depresi\": \"P002\"}, {\"value\": \"1\", \"kode_depresi\": \"P003\"}, {\"value\": \"1\", \"kode_depresi\": \"P004\"}]', '[[\"G001\", \"0.4\"], [\"G002\", \"0.2\"], [\"G003\", \"0.2\"], [\"G016\", \"0.4\"], [\"G021\", \"0.4\"], [\"G022\", \"1\"]]', '2023-01-02 21:51:12', '2023-01-02 21:51:12'),
+(2, '63b3662f79583', '[{\"value\": \"0.6\", \"kode_depresi\": \"P002\"}, {\"value\": \"1\", \"kode_depresi\": \"P003\"}, {\"value\": \"0.936\", \"kode_depresi\": \"P004\"}]', '[[\"G019\", \"0.2\"], [\"G020\", \"0.4\"], [\"G021\", \"1\"], [\"G022\", \"1\"], [\"G023\", \"0.6\"]]', '2023-01-02 22:18:07', '2023-01-02 22:18:07'),
+(3, '63b36da2aeaba', '[{\"value\": \"0.744\", \"kode_depresi\": \"P001\"}, {\"value\": \"0.64\", \"kode_depresi\": \"P002\"}, {\"value\": \"0.76\", \"kode_depresi\": \"P003\"}, {\"value\": \"1\", \"kode_depresi\": \"P004\"}]', '[[\"G004\", \"0.8\"], [\"G005\", \"0.8\"], [\"G007\", \"0.8\"], [\"G008\", \"1\"], [\"G011\", \"0.4\"], [\"G012\", \"1\"]]', '2023-01-02 22:49:54', '2023-01-02 22:49:54'),
+(4, '63b36dc9389dc', '[{\"value\": \"0.2\", \"kode_depresi\": \"P001\"}, {\"value\": \"0.97408\", \"kode_depresi\": \"P002\"}, {\"value\": \"1\", \"kode_depresi\": \"P003\"}, {\"value\": \"1\", \"kode_depresi\": \"P004\"}]', '[[\"G002\", \"0.4\"], [\"G010\", \"1\"], [\"G011\", \"1\"], [\"G012\", \"0.8\"], [\"G013\", \"0.8\"], [\"G015\", \"0.8\"], [\"G016\", \"1\"]]', '2023-01-02 22:50:33', '2023-01-02 22:50:33');
 
 -- --------------------------------------------------------
 
@@ -331,6 +334,22 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
+-- Dumping data untuk tabel `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'admin', 'admin@example.com', '2023-01-02 20:28:25', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'drGkoMPAlcsKNokFmO8uiwzyymzaPMpqr75uPs6jK3Mp5nYRGX3PA7s6InBm', '2023-01-02 20:28:25', '2023-01-02 20:28:25'),
+(2, 'admin', 'yuniar.oskar@example.com', '2023-01-02 20:28:25', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'bkh0sKn61E', '2023-01-02 20:28:25', '2023-01-02 20:28:25'),
+(3, 'admin', 'vramadan@example.net', '2023-01-02 20:28:25', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'r1JPK5z8nI', '2023-01-02 20:28:25', '2023-01-02 20:28:25'),
+(4, 'admin', 'agustina.imam@example.org', '2023-01-02 20:28:25', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'T3dCjn1lJ5', '2023-01-02 20:28:25', '2023-01-02 20:28:25'),
+(5, 'admin', 'talia.pratiwi@example.org', '2023-01-02 20:28:25', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'NrTEJC4wB2', '2023-01-02 20:28:25', '2023-01-02 20:28:25'),
+(6, 'admin', 'dasa62@example.com', '2023-01-02 20:28:25', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '8cQbmVeI3l', '2023-01-02 20:28:25', '2023-01-02 20:28:25'),
+(7, 'admin', 'iswahyudi.bajragin@example.com', '2023-01-02 20:28:25', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'Q24FY2Wuiz', '2023-01-02 20:28:25', '2023-01-02 20:28:25'),
+(8, 'admin', 'qandriani@example.org', '2023-01-02 20:28:25', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'JFGBS3dYjK', '2023-01-02 20:28:25', '2023-01-02 20:28:25'),
+(9, 'admin', 'awibowo@example.net', '2023-01-02 20:28:25', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '6X6LRuS0OW', '2023-01-02 20:28:25', '2023-01-02 20:28:25'),
+(10, 'admin', 'pertiwi.erik@example.net', '2023-01-02 20:28:25', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'RWNq9QW9ad', '2023-01-02 20:28:25', '2023-01-02 20:28:25');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -418,7 +437,7 @@ ALTER TABLE `artikels`
 -- AUTO_INCREMENT untuk tabel `diagnosas`
 --
 ALTER TABLE `diagnosas`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `failed_jobs`
@@ -466,7 +485,7 @@ ALTER TABLE `tingkat_depresi`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
