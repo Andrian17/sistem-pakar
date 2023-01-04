@@ -13,7 +13,7 @@
     <li class="nav-heading">Pengetahuan</li>
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="{{ route('spk.create') }}">
+      <a class="nav-link collapsed" href="{{ route('cl.form') }}">
         <i class="bi bi-clipboard-check"></i>
         <span>Diagnosa</span>
       </a>
