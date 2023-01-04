@@ -16,11 +16,6 @@ class ArtikelFactory extends Factory
      */
     public function definition()
     {
-        return [
-            "url_gambar" => $this->faker->imageUrl(640, 480, 'emotion'),
-            "kode_depresi" => "P002",
-            "isi" => $this->faker->text(600),
-            "judul" => $this->faker->text(80)
-        ];
+        return [];
     }
 }

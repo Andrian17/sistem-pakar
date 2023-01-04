@@ -145,11 +145,7 @@ class DiagnosaController extends Controller
         for ($i = 0; $i < count($cfArr["cf"]) - 1; $i++) {
             $cfoldGabungan = $cfoldGabungan + ($cfArr["cf"][$i + 1] * (1 - $cfoldGabungan));
         }
-        // echo "<br>cfGabungan return : $cfoldGabungan";
-        // echo "<br> cfArr kode_depresi : ";
-        // print_r($cfArr["kode_depresi"]);
-        // echo "<br>";
-        // dd($cfoldGabungan);
+
 
         return [
             "value" => "$cfoldGabungan",
@@ -162,7 +158,7 @@ class DiagnosaController extends Controller
         $diagnosa = Diagnosa::where('diagnosa_id', $diagnosa_id)->first();
         $gejala = json_decode($diagnosa->kondisi, true);
         $data_diagnosa = json_decode($diagnosa->data_diagnosa, true);
-        //dd($data_diagnosa);
+        // dd($data_diagnosa);
         $int = 0.0;
         $diagnosa_dipilih = [];
         foreach ($data_diagnosa as $val) {

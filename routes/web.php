@@ -52,14 +52,7 @@ Route::middleware('auth')->group(function () {
     });
 
 
-    Route::get('/form', function () {
-        $data = [
-            'gejala' => Gejala::all(),
-            'kondisi_user' => KondisiUser::all()
-        ];
 
-        return view('form', $data);
-    });
 
     Route::get('/home', function () {
         return redirect('/dashboard');
@@ -68,6 +61,15 @@ Route::middleware('auth')->group(function () {
     Route::resource('/gejala', GejalaController::class);
     Route::resource('/depresi', TingkatDepresiController::class);
     Route::resource('/spk', DiagnosaController::class)->only('index');
+});
+
+
+Route::get('/form', function () {
+    $data = [
+        'gejala' => Gejala::all(),
+        'kondisi_user' => KondisiUser::all()
+    ];
+    return view('form', $data);
 });
 
 Route::get('/form-faq', function () {

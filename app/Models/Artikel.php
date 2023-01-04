@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Artikel extends Model
 {
     use HasFactory;
-    protected $fillable = ["isi", "judul", "kode_depresi", "id_gambar"];
+    protected $fillable = ["isi", "judul", "kode_depresi", "id_gambar", "url_gambar"];
 
     public function depresi()
     {

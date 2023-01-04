@@ -89,7 +89,7 @@
                 <li>
                     <a class="shadow-hover curent-shadow" href="#">Menu</a>
                     <ul>
-                        <li><a href="{{ route('spk.create') }}">Diagnosa</a></li>
+                        <li><a href="/form-faq">Diagnosa</a></li>
                         <li><a href="/gejala">Gejala</a></li>
                         <li><a href="/depresi">Depresi</a></li>
                     </ul>
