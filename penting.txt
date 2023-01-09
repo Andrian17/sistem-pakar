@@ -1,0 +1,16 @@
+copy file env.example kemudian ubah namanya menjadi .env
+
+buka file .env setting database nya
+
+Pada terminal / CMD jalankan perintah dibawah
+
+php artisan key:generate
+npm install
+composer install
+php artisan migrate:fresh --seed
+php artisan serve
+
+
+Untuk Login
+email : admin@example.com
+password : password
