@@ -1,3 +1,5 @@
+github = https://github.com/Andrian17/sistem-pakar.git
+
 copy file env.example kemudian ubah namanya menjadi .env
 
 buka file .env setting database nya
