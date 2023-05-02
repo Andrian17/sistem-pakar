@@ -12,6 +12,8 @@
     {{-- external assets --}}
     @yield('external_assets')
 
+    <link rel="stylesheet" href="{{ asset('/assets/css/style.css') }}">
+
   </head>
   <body>
     @yield('main_section')

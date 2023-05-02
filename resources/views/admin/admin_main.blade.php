@@ -1,10 +1,10 @@
 @extends('main')
-@section('external_assets')
+{{-- @section('external_assets')
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 @endsection
 @section('js_external_assets')
     <script src="{{ asset('assets/js/main.js') }}"></script>
-@endsection
+@endsection --}}
 @section('main_section')
     {{-- Navbar dan header --}}
     @include('components.admin_header')

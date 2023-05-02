@@ -75,7 +75,7 @@
                         </div>
                         <div class="ps-3">
                           <h6>{{$tingkat_depresi->count()}}</h6>
-                          <span class="text-success small pt-1 fw-bold">{{$gejala->count()}}</span> <span class="text-muted small pt-2 ps-1">depresi</span>
+                          <span class="text-success small pt-1 fw-bold">{{$gejala->count()}}</span> <span class="text-muted small pt-2 ps-1">gejala</span>
 
                         </div>
                       </div>
